@@ -1,0 +1,1 @@
+using capqueryservice as service from '../../srv/service';

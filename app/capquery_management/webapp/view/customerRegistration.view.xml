@@ -1,0 +1,54 @@
+
+<mvc:View xmlns:html="http://www.w3.org/1999/xhtml" xmlns:semantic="sap.m.semantic" xmlns:core="sap.ui.core" xmlns:tnt="sap.tnt" xmlns:cards="sap.f.cards" xmlns:form="sap.ui.layout.form" xmlns:ui="sap.ui.table" xmlns:u="sap.ui.unified" xmlns:c="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout" xmlns="sap.m" controllerName= "capquerymanagement.controller.customerRegistration" displayBlock="true">
+<OverflowToolbar
+    >
+        <Title
+            text="Capacity Query Management"
+            textAlign="End"
+        />
+    </OverflowToolbar>
+
+<Panel >
+<FlexBox class="regFormheader">
+<VBox  alignItems="End" class="regFormheader">
+<FlexBox >
+</FlexBox>
+<FlexBox  >
+<Label  text="Customer Name" required="true" class="sapUiTinyMarginTop sapUiTinyMarginBeginEnd "/>
+<Input id="customerNameInput" value="" width="200px"/>
+</FlexBox>
+<FlexBox >
+<Label  text="Region"  class="sapUiTinyMarginTop sapUiTinyMarginBeginEnd "/>
+<Input id="regionInput" value="" width="200px"/>
+</FlexBox>
+<FlexBox>
+<Label  text="Country"  class="sapUiTinyMarginTop sapUiTinyMarginBeginEnd"/>
+<Input id="countryInput" value="" width="200px"/>
+</FlexBox>
+</VBox>
+<VBox  alignItems="End" class="regFormheader">
+<FlexBox >
+<Label  text="Industry Type" class="sapUiTinyMarginTop sapUiTinyMarginBeginEnd"/>
+<Input id="industryTypeInput" value=""  width="200px"/>
+</FlexBox>
+<FlexBox >
+<Label  text="City Name" class="sapUiTinyMarginTop sapUiTinyMarginBeginEnd"/>
+<Input id="cityNameInput" value="" width="200px"/>
+</FlexBox>
+
+
+</VBox>
+</FlexBox>
+</Panel>
+ <Button
+                                id="registrationSubmit"
+                                text="Submit"
+                                width="100px"
+                                class="sapUiSmallMargin"
+                                type="Emphasized"
+                                press="onSubmitcustomerData"
+                            />
+
+
+
+</mvc:View>

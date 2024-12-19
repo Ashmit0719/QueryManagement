@@ -1,0 +1,57 @@
+{
+  "name": "CapacityQueryManagement",
+  "version": "1.0.0",
+  "description": "A simple CAP project.",
+  "repository": "<Add your repository here>",
+  "license": "UNLICENSED",
+  "private": true,
+  "dependencies": {
+    "@sap-cloud-sdk/http-client": "^3.24.0",
+    "@sap-cloud-sdk/resilience": "^3.24.0",
+    "@sap/cds": "^8",
+    "express": "^4",
+    "@cap-js/hana": "^1"
+  },
+  "devDependencies": {
+    "@cap-js/cds-types": "^0.7.0",
+    "@cap-js/sqlite": "^1",
+    "@sap/cds-dk": "^8"
+  },
+  "scripts": {
+    "start": "cds-serve",
+    "watch-capquery_management": "cds watch --open capquery_management/webapp/index.html?sap-ui-xx-viewCache=false"
+  },
+  "cds": {
+    "requires": {
+      "GMSBUSINESS_PARTNER_CUSTOMER_SRV": {
+        "kind": "odata-v2",
+        "model": "srv/external/GMSBUSINESS_PARTNER_CUSTOMER_SRV",
+        "[production]": {
+          "credentials": {
+            "destination": "Ingenx_OData_SAP1",
+            "path": "/sap/opu/odata/gms/BUSINESS_PARTNER_CUSTOMER_SRV"
+          }
+        },
+        "[development]": {
+          "credentials": {
+            "destination": "SandboxPO",
+            "path": "/sap/opu/odata/gms/BUSINESS_PARTNER_CUSTOMER_SRV"
+          }
+        },
+        "csrf": true,
+        "csrfInBatch": true
+      },
+      "GMS_CONFIG": {
+        "kind": "odata",
+        "model": "srv/external/GMS_CONFIG",
+        "credentials": {
+          "destination": "GMS_CONFIG_SRV"
+        }
+
+      }
+    },
+    "sql": {
+      "native_hana_associations": false
+    }
+  }
+}

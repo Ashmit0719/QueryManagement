@@ -1,0 +1,32 @@
+###
+
+GET http://localhost:4004/odata/v4/capqueryservice/A_BusinessPartner('14013')?$expand=to_Customer
+
+###
+
+###
+
+GET http://localhost:4004/odata/v4/capqueryservice/customer
+
+###
+
+POST http://localhost:4004/odata/v4/capqueryservice/customer
+Content-Type: application/json
+
+{
+  "ID": "4",
+  "contractType": "Sales Contract",
+  "documentType": "ZGSA",
+  "serviceParameterType":"String",
+  "service_parameter": "Country",
+  "serviceParameterlength": 20,
+  "label": "Country",
+  "visible": true,
+  "mandatory": false
+}
+
+
+###
+
+DELETE http://localhost:4004/odata/v4/capqueryservice/customer(123e4567-e89b-12d3-a456-426614174000)
+Content-Type: application/json

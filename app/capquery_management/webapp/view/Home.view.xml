@@ -1,0 +1,47 @@
+<mvc:View controllerName="capquerymanagement.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m">
+    <OverflowToolbar id="_IDGenOverflowToolbar9" height="50px">
+            <Title
+                id="pageHeader"
+                text="Capacity Query Management"
+                textAlign="Center">
+            </Title>
+        </OverflowToolbar>
+    <Page id="page" showHeader="false">
+        <content>
+         <GenericTile id="ID_config" class="sapUiSmallMarginBegin sapUiSmallMarginTop tileLayout" header="Configuration" press="onConfigClick" >
+                <TileContent  >
+                    <ImageContent  src="sap-icon://create-form" />
+                </TileContent>
+            </GenericTile>
+            <GenericTile id="ID_Registration" class="sapUiSmallMarginBegin sapUiSmallMarginTop tileLayout" header="Registration" press="onRegisClick" >
+                <TileContent  >
+                    <ImageContent  src="sap-icon://create-form" />
+                </TileContent>
+            </GenericTile>
+            <GenericTile id="ID_Submission" class="sapUiSmallMarginBegin sapUiSmallMarginTop tileLayout" header="Submission" press="onCreateProfile" >
+                <TileContent  >
+                    <ImageContent  src="sap-icon://complete" />
+                </TileContent>
+            </GenericTile>
+            <GenericTile  class="sapUiSmallMarginBegin sapUiSmallMarginTop tileLayout" header="Review" press="onProMap">
+             <TileContent  >
+                    <ImageContent  src="sap-icon://to-be-reviewed" />
+                </TileContent>
+            </GenericTile>
+            <GenericTile  class="sapUiSmallMarginBegin sapUiSmallMarginTop tileLayout" header="Offer" press="onPathFuel" >
+            <TileContent  >
+                    <ImageContent src="sap-icon://opportunity" />
+                </TileContent>
+            </GenericTile>
+            <GenericTile  class="sapUiSmallMarginBegin sapUiSmallMarginTop tileLayout" header="Final Approval" press="onAllocationRule" >
+            <TileContent  >
+                    <ImageContent  src="sap-icon://employee-approvals" />
+                </TileContent>
+            </GenericTile>
+           
+         
+        </content>
+    </Page>
+</mvc:View>

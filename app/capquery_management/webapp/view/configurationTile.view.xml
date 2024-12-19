@@ -1,0 +1,51 @@
+<mvc:View
+    controllerName="capquerymanagement.controller.configurationTile"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
+    xmlns="sap.m"
+>
+    <OverflowToolbar
+        id="_IDGenOverflowToolbar91"
+        height="50px"
+    >
+        <Title
+            id="pageHeader12"
+            text="Configuration Tile"
+            textAlign="Center"
+        />
+    </OverflowToolbar>
+
+    <Page
+        id="page1"
+        showHeader="false"
+    >
+        <content>
+            <GenericTile
+                id="ID_config1"
+                class="sapUiSmallMarginBegin sapUiSmallMarginTop tileLayout"
+                header="Configuration"
+                press="onConfigClick"
+            >
+                <TileContent id="_IDGenTileContent">
+                    <ImageContent
+                        id="_IDGenImageContent1"
+                        src="sap-icon://create-form"
+                    />
+                </TileContent>
+            </GenericTile>
+            <GenericTile
+                id="ID_Registration1"
+                class="sapUiSmallMarginBegin sapUiSmallMarginTop tileLayout"
+                header="Field Defination"
+                press="onFieldDefinationClick"
+            >
+                <TileContent id="_IDGenTileContent1">
+                    <ImageContent
+                        id="_IDGenImageContent2"
+                        src="sap-icon://create-form"
+                    />
+                </TileContent>
+            </GenericTile>
+        </content>
+    </Page>
+</mvc:View>

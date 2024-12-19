@@ -1,0 +1,203 @@
+<core:FragmentDefinition
+    xmlns="sap.m"
+    xmlns:core="sap.ui.core"
+    xmlns:l="sap.ui.layout"
+>
+    <Dialog
+        titleAlignment="Center"
+        type="Standard"
+        id="addFieldCGC_DetailsDialog"
+        title="Config Data"
+        contentWidth="400px"
+        contentHeight="auto"
+        class="details_tab"
+        afterClose="onDialogClose"
+    >
+        <IconTabBar
+            id="addFieldCGC_IconTabBar"
+            select=".onFilterSelect"
+            class="sapUiResponsiveContentPadding"
+            expandable="false"
+        >
+            <items>
+                <IconTabFilter
+                    id="addFieldCGC_StandardTab"
+                    icon="sap-icon://detail-more"
+                    iconColor="Positive"
+                    text="Standard"
+                    key="Ok"
+                >
+                    <Label id="addFieldCGC_ParameterNameLabelStandard" text="Parameter Name :" />
+                    <Select
+                        id="addFieldCGC_FieldTypeComboBoxStandard"
+                        width="100%"
+                        selectedKey="{addServiceParameterModel>/selectedStandardType}"
+                        items="{addServiceParameterModel>/fieldstandard}"
+                        change="onComboBoxChange2"
+                    >
+                        <items>
+                            <core:Item id="addFieldCGC_FieldStandardItem"
+                                key="{addServiceParameterModel>key}"
+                                text="{addServiceParameterModel>text}"
+                            />
+                        </items>
+                    </Select>
+                    <Label id="addFieldCGC_ParameterLabelStandardText" text="Parameter Label:" />
+                    <Input
+                        id="addFieldCGC_ParameterLabelStandard"
+                        value="{addServiceParameterModel>/parameterLabel}"
+                        placeholder="Enter field Label"
+                    />
+                    <Label
+                        id="addFieldCGC_FieldTypeLabelStandard"
+                        text="Field Type :"
+                    />
+                    <Select
+                        id="addFieldCGC_FieldTypeComboBox"
+                        width="100%"
+                        selectedKey="{addServiceParameterModel>/selectedFieldType}"
+                        items="{addServiceParameterModel>/fieldTypeList}"
+                        change="onComboBoxChange"
+                    >
+                        <items>
+                            <core:Item id="addFieldCGC_FieldTypeListItem"
+                                key="{addServiceParameterModel>key}"
+                                text="{addServiceParameterModel>text}"
+                            />
+                        </items>
+                    </Select>
+                    <Input
+                        id="addFieldCGC_FieldLengthStandard"
+                        placeholder="Enter Length"
+                        value="{addServiceParameterModel>/fieldLength}"
+                        type="Number"
+                        visible="{=${addServiceParameterModel>/selectedFieldType} === 'String' ? true : false}"
+                    />
+                    <VBox
+                        id="addFieldCGC_ListInputsVBoxStandard"
+                        visible="{=${addServiceParameterModel>/selectedFieldType} === 'List' ? true : false}"
+                        class="createParameterFrag"
+                    >
+                        <VBox id="addFieldCGC_ListValuesVBoxStandard" items="{path: 'addServiceParameterModel>/listValues'}">
+                            <items>
+                                <Input id="addFieldCGC_ListValueInputStandard"
+                                    placeholder="Enter Value"
+                                    value="{addServiceParameterModel>value}"
+                                    width="200px"
+                                />
+                            </items>
+                        </VBox>
+                        <Button
+                            id="addFieldCGC_AddListItemButtonStandard"
+                            icon="sap-icon://add"
+                            press="onAddListItemStandatd"
+                        />
+                    </VBox>
+
+                    <HBox id="addFieldCGC_ButtonsHBoxStandard">
+                        <Button
+                            id="addFieldCGC_SaveButtonStandard"
+                            type="Accept"
+                            width="100px"
+                            text="Save"
+                            press="onSaveStandard"
+                            class="sapUiTinyMargin"
+                        />
+                        <Button
+                            id="addFieldCGC_CancelButtonStandard"
+                            type="Reject"
+                            width="100px"
+                            text="Cancel"
+                            press="oncancelNewParameter"
+                            class="sapUiTinyMargin"
+                        />
+                    </HBox>
+                </IconTabFilter>
+
+                <IconTabFilter
+                    id="addFieldCGC_CustomTab"
+                    icon="sap-icon://detail-more"
+                    iconColor="Positive"
+                    text="Custom"
+                    key="Ok"
+                >
+                    <Label id="addFieldCGC_ParameterNameLabelCustom" text="Parameter Name :" />
+                    <Input
+                        id="addFieldCGC_ParameterNameCustom"
+                        value="{addServiceParameterModelCustom>/parameterName}"
+                        placeholder="Enter Parameter name"
+                    />
+                    <Label id="addFieldCGC_ParameterLabelCustomText" text="Parameter Label:" />
+                    <Input
+                        id="addFieldCGC_ParameterLabelCustom"
+                        value="{addServiceParameterModelCustom>/parameterLabel}"
+                        placeholder="Enter field Label"
+                    />
+                    <Label
+                        id="addFieldCGC_FieldTypeLabelCustom"
+                        text="Field Type :"
+                    />
+                    <Select
+                        id="addFieldCGC_FieldTypeComboBoxCustom"
+                        width="100%"
+                        selectedKey="{addServiceParameterModelCustom>/selectedFieldType}"
+                        items="{addServiceParameterModelCustom>/fieldTypeList}"
+                        change="onComboBoxChange"
+                    >
+                        <items>
+                            <core:Item id="addFieldCGC_FieldTypeListItemCustom"
+                                key="{addServiceParameterModelCustom>key}"
+                                text="{addServiceParameterModelCustom>text}"
+                            />
+                        </items>
+                    </Select>
+                    <Input
+                        id="addFieldCGC_FieldLengthCustom"
+                        placeholder="Enter Length"
+                        value="{addServiceParameterModelCustom>/fieldLength}"
+                        type="Number"
+                        visible="{=${addServiceParameterModelCustom>/selectedFieldType} === 'String' ? true : false}"
+                    />
+
+                    <VBox
+                        id="addFieldCGC_ListInputsVBoxCustom"
+                        visible="{=${addServiceParameterModelCustom>/selectedFieldType} === 'List' ? true : false}"
+                        class="createParameterFrag"
+                    >
+                        <VBox id="addFieldCGC_ListValuesVBoxCustom" items="{path: 'addServiceParameterModelCustom>/listValues'}">
+                            <items>
+                                <Input id="addFieldCGC_ListValueInputCustom"
+                                    placeholder="Enter Value"
+                                    value="{addServiceParameterModelCustom>value}"
+                                    width="200px"
+                                />
+                            </items>
+                        </VBox>
+                        <Button
+                            id="addFieldCGC_AddListItemButtonCustom"
+                            icon="sap-icon://add"
+                            press="onAddListItemCustom"
+                        />
+                    </VBox>
+
+                    <Button
+                        id="addFieldCGC_SaveButtonCustom"
+                        type="Accept"
+                        width="100px"
+                        text="Save"
+                        press="onSaveCustom"
+                        class="sapUiTinyMargin"
+                    />
+                    <Button
+                        id="addFieldCGC_CancelButtonCustom"
+                        type="Reject"
+                        width="100px"
+                        text="Cancel"
+                        press="oncancelNewParameter"
+                        class="sapUiTinyMargin"
+                    />
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+    </Dialog>
+</core:FragmentDefinition>
