@@ -9,36 +9,36 @@
     xmlns:tnt="sap.tnt"
 >
 <tnt:ToolHeader
-        id="cgcConfig_mainToolheaded"
+        id="configFieldDefination_mainToolheaded"
         class="sapUiSmallMarginBegin sapUiSmallMarginEnd sapUiSmallMarginTop"
     >
         <ToolbarSpacer
-            id="cgcConfig_mainToolbarSpacer"
+            id="configFieldDefination_mainToolbarSpacer"
             width="15px"
         />
         <Title
-            id="cgcConfig_Title_FieldDefinition"
+            id="configFieldDefination_Title_FieldDefinition"
             text="Customer Master Field Definition"
             wrapping="true"
             level="H3"
         />
-        <ToolbarSpacer id="cgcConfig_ToolbarSpacer" />
+        <ToolbarSpacer id="configFieldDefination_ToolbarSpacer" />
         <Button
-            id="cgcConfig_Button_Create"
+            id="configFieldDefination_Button_Create"
             text="Create"
             width="100px"
             press="onAddDynamic"
             type="Emphasized"
         />
         <Button
-            id="cgcConfig_Button_DeleteField"
+            id="configFieldDefination_Button_DeleteField"
             text="Delete"
             width="100px"
             press="onDeleteDynamic"
             type="Emphasized"
         />
         <Button
-            id="cgcConfig_Button_ConfirmDeletion"
+            id="configFieldDefination_Button_ConfirmDeletion"
             text="Confirm"
             width="100px"
             press="onConfirmFieldDeletion"
@@ -46,7 +46,7 @@
             visible="false"
         />
         <Button
-            id="cgcConfig_Button_CancelDeletion"
+            id="configFieldDefination_Button_CancelDeletion"
             text="Cancel"
             width="100px"
             press="onCancelFieldDeletion"
@@ -57,33 +57,33 @@
 
 <!-- Contract and Document Type Selection -->
      <l:VerticalLayout
-        id="cgcConfig_hVerticalLayout"
+        id="configFieldDefination_hVerticalLayout"
         width="100%"
     >
         <l:BlockLayout
-            id="cgcConfig_BlochkLayout"
+            id="configFieldDefination_BlochkLayout"
             background="Dashboard"
         >
-            <l:BlockLayoutRow id="cgcConfig_BlockLayoutRow">
+            <l:BlockLayoutRow id="configFieldDefination_BlockLayoutRow">
                 <l:BlockLayoutCell
-                    id="cgcConfig_BlockLahyoutCell"
+                    id="configFieldDefination_BlockLahyoutCell"
                     width="90%"
                 >
                     <HBox
-                        id="cgcConfig_HBox_Main"
+                        id="configFieldDefination_HBox_Main"
                         class="sapUiSmallMarginTop"
                     >
                         <HBox
-                            id="cgcConfig_HBox_ContractType"
+                            id="configFieldDefination_HBox_ContractType"
                             class="sapUiSmallMarginBottom sapUiSmallMarginEnd"
                         >
                             <Label
-                                id="cgcConfig_Label_ContractType"
+                                id="configFieldDefination_Label_ContractType"
                                 text="Contract Type :"
                                 class="configTypeLabel"
                             />
                             <Input
-                                id="cgcConfig_Select_ContractType"
+                                id="configFieldDefination_Select_ContractType"
                                 editable="false"
                                 class="sapUiSmallMarginBegin"
                                 value="Sales Contract"
@@ -92,23 +92,23 @@
                                 
                         </HBox>
                         <HBox
-                            id="cgcConfig_HBox_DocumentType"
+                            id="configFieldDefination_HBox_DocumentType"
                             class="sapUiSmallMarginBottom sapUiSmallMarginEnd"
                         >
                             <Label
-                                id="cgcConfig_Label_DocumentType"
+                                id="configFieldDefination_Label_DocumentType"
                                 text="Document Type :"
                                 class="sapUiLargeMarginBegin"
                             />
                             <Select
-                                id="cgcConfig_Select_DocumentType"
+                                id="configFieldDefination_Select_DocumentType"
                                 forceSelection="false"
                                 items="{docHITypes>/}"
                                 change="onDocumentTypeSelect"
                                 class="sapUiSmallMarginBegin"
                             >
                                 <core:Item
-                                    id="cgcConfig_Item_Document"
+                                    id="configFieldDefination_Item_Document"
                                     key="{docHITypes>DocumentNo}"
                                     text="{docHITypes>DocumentNo}"
                                 />
@@ -123,24 +123,24 @@
 
         <!-- Main Page -->
     <Page
-        id="cgcConfig_Page"
+        id="configFieldDefination_Page"
         showHeader="false"
     >
         <l:VerticalLayout
-            id="cgcConfig_VerticalLayout"
+            id="configFieldDefination_VerticalLayout"
             width="100%"
         >
             <l:BlockLayout
-                id="cgcConfig_wBlockLayout"
+                id="configFieldDefination_wBlockLayout"
                 background="Dashboard"
             >
-                <l:BlockLayoutRow id="cgcConfig_mainBlockLayoutRow">
+                <l:BlockLayoutRow id="configFieldDefination_mainBlockLayoutRow">
                     <l:BlockLayoutCell
-                        id="cgcConfig_BlockLayowutCell"
+                        id="configFieldDefination_BlockLayowutCell"
                         width="90%"
                     >
                         <ScrollContainer
-                            id="cgcConfig_scrollcont"
+                            id="configFieldDefination_scrollcont"
                             width="100%"
                             height="calc(60vh - 110px)"
                             horizontal="false"
@@ -150,18 +150,18 @@
                                 <!-- Static Table -->
                                 <Table
                                     items="{staticModel>/}"
-                                    id="cgcConfig_StaticTable"
+                                    id="configFieldDefination_StaticTable"
                                     visible="false"
                                     growing="true"
                                 >
                                     <infoToolbar>
                                         <OverflowToolbar
-                                            id="cgcConfig_StaticTable_Toolbar"
+                                            id="configFieldDefination_StaticTable_Toolbar"
                                             height="50px"
                                         >
                                             <content>
                                                 <Title
-                                                    id="cgcConfig_StaticTable_Title"
+                                                    id="configFieldDefination_StaticTable_Title"
                                                     text="Static Fields"
                                                 />
                                             </content>
@@ -170,18 +170,18 @@
                                     <items>
                                         <ColumnListItem
                                             type="Active"
-                                            id="cgcConfig_StaticItem"
+                                            id="configFieldDefination_StaticItem"
                                         >
                                             <cells>
                                                 <Text
-                                                    id="cgcConfig_StaticCell_ID"
+                                                    id="configFieldDefination_StaticCell_ID"
                                                     text="{staticModel>ID}"  />
                                                 <Text
-                                                    id="cgcConfig_StaticCell_ServiceParameter"
+                                                    id="configFieldDefination_StaticCell_ServiceParameter"
                                                     text="{staticModel>service_parameter}"
                                                 />
                                                 <Input
-                                                    id="cgcConfig_StaticCell_Label"
+                                                    id="configFieldDefination_StaticCell_Label"
                                                     value="{staticModel>label}"
                                                     liveChange="onStaticLabelUpdate"
                                                     width="250px"
@@ -190,30 +190,30 @@
                                         </ColumnListItem>
                                     </items>
                                     <columns>
-                                        <Column id="cgcConfig_StaticColumn_ID">
+                                        <Column id="configFieldDefination_StaticColumn_ID">
                                             <header>
                                                 <Label
-                                                    id="cgcConfig_StaticColumn_Label_ID"
+                                                    id="configFieldDefination_StaticColumn_Label_ID"
                                                     text="ID"
                                                 />
                                             </header>
                                         </Column>
                                         <Column
-                                            id="cgcConfig_StaticColumn_ServiceParameter"
+                                            id="configFieldDefination_StaticColumn_ServiceParameter"
                                         >
                                             <header>
                                                 <Label
-                                                    id="cgcConfig_StaticColumn_Label_ServiceParameter"
+                                                    id="configFieldDefination_StaticColumn_Label_ServiceParameter"
                                                     text="Service Parameter"
                                                 />
                                             </header>
                                         </Column>
                                         <Column
-                                            id="cgcConfig_StaticColumn_Label"
+                                            id="configFieldDefination_StaticColumn_Label"
                                         >
                                             <header>
                                                 <Label
-                                                    id="cgcConfig_StaticColumn_Label_Label"
+                                                    id="configFieldDefination_StaticColumn_Label_Label"
                                                     text="Label"
                                                 />
                                             </header>
@@ -221,7 +221,7 @@
                                     </columns>
                                     <noData>
                                         <IllustratedMessage
-                                            id="cgcConfig_StaticTable_NoData"
+                                            id="configFieldDefination_StaticTable_NoData"
                                             enableVerticalResponsiveness="true"
                                             title="No Data Found"
                                             description="There are no items in this Table"
@@ -231,23 +231,23 @@
 
                                 <!-- Dynamic Table -->
                                 <VBox
-                                    id="cgcConfig_DynamicTable_VBox"
+                                    id="configFieldDefination_DynamicTable_VBox"
                                     class="vboxmargin"
                                 >
                                     <Table
                                         items="{dynamicModel>/}"
-                                        id="cgcConfig_DynamicTable"
+                                        id="configFieldDefination_DynamicTable"
                                         visible="false"
                                         growing="true"
                                     >
                                         <infoToolbar>
                                             <OverflowToolbar
-                                                id="cgcConfig_DynamicTable_Toolbar"
+                                                id="configFieldDefination_DynamicTable_Toolbar"
                                                 height="50px"
                                             >
                                                 <content>
                                                     <Title
-                                                        id="cgcConfig_DynamicTable_Title"
+                                                        id="configFieldDefination_DynamicTable_Title"
                                                         text="Dynamic Fields"
                                                     />
                                                 </content>
@@ -256,36 +256,36 @@
                                         <items>
                                             <ColumnListItem
                                                 type="Active"
-                                                id="cgcConfig_DynamicItem"
+                                                id="configFieldDefination_DynamicItem"
                                             >
                                                 <cells>
                                                     <CheckBox
-                                                        id="cgcConfig_DynamicCheckbox_Delete"
+                                                        id="configFieldDefination_DynamicCheckbox_Delete"
                                                         select="onDeleteDynamicFieldArray"
                                                         enabled="{path: 'dataModel>flag', formatter: '.checkMandatory'}"
                                                     />
                                                     <Text
-                                                        id="cgcConfig_DynamicCell_ID"
+                                                        id="configFieldDefination_DynamicCell_ID"
                                                         text="{dynamicModel>ID}"
                                                         visible="true"
                                                     />
                                                     <Text
-                                                        id="cgcConfig_DynamicCell_ServiceParameter"
+                                                        id="configFieldDefination_DynamicCell_ServiceParameter"
                                                         text="{dynamicModel>service_parameter}"
                                                     />
                                                     <Input
-                                                        id="cgcConfig_DynamicCell_Label"
+                                                        id="configFieldDefination_DynamicCell_Label"
                                                         value="{dynamicModel>label}"
                                                         liveChange="onDynamicLabelUpdate"
                                                     />
                                                     <CheckBox
-                                                        id="cgcConfig_DynamicCheckbox_Mandatory"
+                                                        id="configFieldDefination_DynamicCheckbox_Mandatory"
                                                         selected="{dynamicModel>mandatory}"
                                                         enabled="{path: 'dynamicModel>flag', formatter: '.checkMandatory'}"
                                                         select="onMandatoryCheckboxChange"
                                                     />
                                                     <CheckBox
-                                                        id="cgcConfig_DynamicCheckbox_Visible"
+                                                        id="configFieldDefination_DynamicCheckbox_Visible"
                                                         selected="{dynamicModel>visible}"
                                                         enabled="{path: 'dynamicModel>flag', formatter: '.checkMandatory'}"
                                                         select="onVisibleCheckboxChange"
@@ -296,64 +296,64 @@
                                         </items>
                                         <columns>
                                             <Column
-                                                id="cgcConfig_DynamicColumn_Delete"
+                                                id="configFieldDefination_DynamicColumn_Delete"
                                                 width="4rem"
                                                 visible="false"
                                             >
                                                 <header>
                                                     <CheckBox
-                                                        id="cgcConfig_DynamicColumn_Checkbox_SelectAll"
+                                                        id="configFieldDefination_DynamicColumn_Checkbox_SelectAll"
                                                         select="onSelectAllDynamicField"
                                                     />
                                                 </header>
                                             </Column>
                                             <Column
-                                                id="cgcConfig_DynamicColumn_ID"
+                                                id="configFieldDefination_DynamicColumn_ID"
                                                 visible="true"
                                             >
                                                 <header>
                                                     <Label
-                                                        id="cgcConfig_DynamicColumn_Label_ID"
+                                                        id="configFieldDefination_DynamicColumn_Label_ID"
                                                         text="ID"
                                                     />
                                                 </header>
                                             </Column>
                                             <Column
-                                                id="cgcConfig_DynamicColumn_ServiceParameter"
+                                                id="configFieldDefination_DynamicColumn_ServiceParameter"
                                             >
                                                 <header>
                                                     <Label
-                                                        id="cgcConfig_DynamicColumn_Label_ServiceParameter"
+                                                        id="configFieldDefination_DynamicColumn_Label_ServiceParameter"
                                                         text="Service Parameter"
                                                     />
                                                 </header>
                                             </Column>
                                             <Column
-                                                id="cgcConfig_DynamicColumn_Label"
+                                                id="configFieldDefination_DynamicColumn_Label"
                                             >
                                                 <header>
                                                     <Label
-                                                        id="cgcConfig_DynamicColumn_Label_Label"
+                                                        id="configFieldDefination_DynamicColumn_Label_Label"
                                                         text="Label"
                                                     />
                                                 </header>
                                             </Column>
                                             <Column
-                                                id="cgcConfig_DynamicColumn_Mandatory"
+                                                id="configFieldDefination_DynamicColumn_Mandatory"
                                             >
                                                 <header>
                                                     <Label
-                                                        id="cgcConfig_DynamicColumn_Label_Mandatory"
+                                                        id="configFieldDefination_DynamicColumn_Label_Mandatory"
                                                         text="Mandatory"
                                                     />
                                                 </header>
                                             </Column>
                                             <Column
-                                                id="cgcConfig_DynamicColumn_Display"
+                                                id="configFieldDefination_DynamicColumn_Display"
                                             >
                                                 <header>
                                                     <Label
-                                                        id="cgcConfig_DynamicColumn_Label_Display"
+                                                        id="configFieldDefination_DynamicColumn_Label_Display"
                                                         text="Display"
                                                     />
                                                 </header>
@@ -362,7 +362,7 @@
                                         </columns>
                                         <noData>
                                             <IllustratedMessage
-                                                id="cgcConfig_DynamicTable_NoData"
+                                                id="configFieldDefination_DynamicTable_NoData"
                                                 enableVerticalResponsiveness="true"
                                                 title="No Data Found"
                                                 description="There are no items in this Table"

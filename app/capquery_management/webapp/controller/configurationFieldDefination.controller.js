@@ -21,7 +21,7 @@ sap.ui.define([
 
     refreshModel: function () {
       try {
-        let documentTypeControl = this.getView().byId("cgcConfig_Select_DocumentType");
+        let documentTypeControl = this.getView().byId("configFieldDefination_Select_DocumentType");
         let selectedItem = documentTypeControl.getSelectedItem();
         if (!selectedItem) {
           console.error("No document type selected.");
@@ -57,7 +57,7 @@ sap.ui.define([
     },
 
     onAfterRendering: function () {
-      const oSelect = this.byId("cgcConfig_Select_DocumentType");
+      const oSelect = this.byId("configFieldDefination_Select_DocumentType");
       const oPopover = oSelect.getPicker();
 
       if (oPopover) {
@@ -144,8 +144,8 @@ sap.ui.define([
 
       });
       // Update UI visibility
-      this.byId("cgcConfig_StaticTable").setVisible(true);
-      this.byId("cgcConfig_DynamicTable").setVisible(true);
+      this.byId("configFieldDefination_StaticTable").setVisible(true);
+      this.byId("configFieldDefination_DynamicTable").setVisible(true);
 
 
     },
@@ -153,7 +153,7 @@ sap.ui.define([
 
     onLastParamCId: function () {
       try {
-        let oTable = this.getView().byId("cgcConfig_DynamicTable"); // Correct table ID
+        let oTable = this.getView().byId("configFieldDefination_DynamicTable"); // Correct table ID
         let oItems = oTable.getItems();
 
         let maxID = 0;
@@ -176,8 +176,8 @@ sap.ui.define([
     },
     onAddDynamic: function () {
       try {
-        //   var sContractType = this.getView().byId("cgcConfig_Select_ContractType").getSelectedKey();
-        var sDocumentType = this.getView().byId("cgcConfig_Select_DocumentType").getSelectedKey();
+        //   var sContractType = this.getView().byId("configFieldDefination_Select_ContractType").getSelectedKey();
+        var sDocumentType = this.getView().byId("configFieldDefination_Select_DocumentType").getSelectedKey();
 
         if (!sDocumentType) {
           MessageBox.error("Please select Contract Type and Document Type.");
@@ -303,15 +303,15 @@ sap.ui.define([
 
     onSaveCustom: function () {
       try {
-        var ContractType = this.getView().byId("cgcConfig_Select_ContractType").getValue();
-        var documentType = this.getView().byId("cgcConfig_Select_DocumentType").getSelectedItem().getText();
+        var ContractType = this.getView().byId("configFieldDefination_Select_ContractType").getValue();
+        var documentType = this.getView().byId("configFieldDefination_Select_DocumentType").getSelectedItem().getText();
 
         var oView = this.getView();
         var oModels = oView.getModel("addServiceParameterModelCustom");
         // var listValues = oModels.getProperty("/listValues");
 
         var addServiceParameterCustom = oModels.getData();
-        var flag = this.getView().byId("cgcConfig_StaticTable").getItems().length + 1;
+        var flag = this.getView().byId("configFieldDefination_StaticTable").getItems().length + 1;
 
         var oEntryDataCustomParameter = {
           ID: (parseInt(lastID, 10) + 1),
@@ -347,20 +347,20 @@ sap.ui.define([
     onSaveStandard: function () {
       try {
         debugger;
-        var ContractType = this.getView().byId("cgcConfig_Select_ContractType").getValue();
-        var documentType = this.getView().byId("cgcConfig_Select_DocumentType").getSelectedItem().getText();
+        var ContractType = this.getView().byId("configFieldDefination_Select_ContractType").getValue();
+        var documentType = this.getView().byId("configFieldDefination_Select_DocumentType").getSelectedItem().getText();
         var oView = this.getView();
         var oModels = oView.getModel("addServiceParameterModel");
         var listValues = oModels.getProperty("/listValues");
 
-        var selectedItemKey = this.getView().byId("cgcConfig_Select_ContractType").getValue();
+        var selectedItemKey = this.getView().byId("configFieldDefination_Select_ContractType").getValue();
         console.log("selectedItemKey", selectedItemKey);
 
         var addServiceParameterData = oModels.getData();
-        var flag = this.getView().byId("cgcConfig_StaticTable").getItems().length + 1;
+        var flag = this.getView().byId("configFieldDefination_StaticTable").getItems().length + 1;
 
         var addServiceParameterData = this.getView().getModel("addServiceParameterModel").getData();
-        var flag = this.getView().byId("cgcConfig_StaticTable").getItems().length + 1
+        var flag = this.getView().byId("configFieldDefination_StaticTable").getItems().length + 1
         var oEntryDataServiceParameter = {
           ID: (parseInt(lastID, 10) + 1),
           contractType: ContractType || "DefaultContract",
@@ -454,7 +454,7 @@ sap.ui.define([
 
     onDeleteDynamic: function () {
       try {
-        var sDocumentType = this.getView().byId("cgcConfig_Select_DocumentType").getSelectedKey();
+        var sDocumentType = this.getView().byId("configFieldDefination_Select_DocumentType").getSelectedKey();
         if (!sDocumentType) {
           MessageBox.error("Please select Contract Type and Document Type.");
           return;
@@ -462,11 +462,11 @@ sap.ui.define([
           MessageBox.error("Please select Document Type.");
           return;
         }
-        var addField = this.byId("cgcConfig_Button_Create");
-        var delField = this.byId("cgcConfig_Button_DeleteField");
-        var confirmDelField = this.byId("cgcConfig_Button_ConfirmDeletion");
-        var cancelDelField = this.byId("cgcConfig_Button_CancelDeletion");
-        var delDynamicCheckBox = this.byId("cgcConfig_DynamicColumn_Delete");
+        var addField = this.byId("configFieldDefination_Button_Create");
+        var delField = this.byId("configFieldDefination_Button_DeleteField");
+        var confirmDelField = this.byId("configFieldDefination_Button_ConfirmDeletion");
+        var cancelDelField = this.byId("configFieldDefination_Button_CancelDeletion");
+        var delDynamicCheckBox = this.byId("configFieldDefination_DynamicColumn_Delete");
 
         // TOGGLE VISIBILTY
         addField.setVisible(!addField.getVisible());
@@ -546,8 +546,8 @@ sap.ui.define([
     },
     onFieldUnCheckBox: function () {
       try {
-        var selectedItemKey = this.getView().byId("cgcConfig_Select_ContractType").getSelectedKey();
-        var oTable = (selectedItemKey === "salesContract") ? this.byId("cgcConfig_DynamicTable") : null;
+        var selectedItemKey = this.getView().byId("configFieldDefination_Select_ContractType").getSelectedKey();
+        var oTable = (selectedItemKey === "salesContract") ? this.byId("configFieldDefination_DynamicTable") : null;
 
         if (!oTable) {
           sap.m.MessageToast.show("Table not found for the selected key.");
@@ -558,7 +558,7 @@ sap.ui.define([
           oItem.getCells()[0].setSelected(false);
         });
 
-        this.getView().byId("cgcConfig_DynamicColumn_Checkbox_SelectAll").setSelected(false);
+        this.getView().byId("configFieldDefination_DynamicColumn_Checkbox_SelectAll").setSelected(false);
       } catch (error) {
         sap.m.MessageToast.show("Error unchecking fields: " + error.message);
         console.error("Error in onFieldUnCheckBox:", error);
@@ -566,7 +566,7 @@ sap.ui.define([
     },
     onSelectAllDynamicField: function (oEvent) {
       try {
-        var oTable = this.byId("cgcConfig_DynamicTable");
+        var oTable = this.byId("configFieldDefination_DynamicTable");
         var oItems = oTable.getItems();
         var selectAll = oEvent.getParameter("selected");
 
